@@ -1,0 +1,32 @@
+rules:
+
+- name: email_required
+  type: required
+  field: email
+
+- name: email_format
+  type: regex
+  field: email
+  pattern: '^[^@]+@[^@]+\.[^@]+$'
+
+- name: age_type
+  type: type
+  field: age
+  dtype: int
+
+- name: age_range
+  type: range
+  field: age
+  min: 18
+  max: 99
+
+- name: unique_customer
+  type: unique
+  field: customer_id
+
+- name: valid_dates
+  type: cross_field
+  fields:
+    - start_date
+    - end_date
+  condition: "end_date >= start_date"

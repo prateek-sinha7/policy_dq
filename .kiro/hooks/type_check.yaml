@@ -1,0 +1,2 @@
+trigger: after_task
+action: mypy src/
