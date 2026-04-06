@@ -39,3 +39,4 @@ policy-dq validate data.csv rules.yaml
 ## Run tests
 
 uv run pytest# policy_dq
+# policy_dq
