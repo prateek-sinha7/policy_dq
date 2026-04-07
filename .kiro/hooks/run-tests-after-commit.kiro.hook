@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Run Tests After Commit",
+  "description": "Runs the full pytest suite after a git commit to ensure all tests pass",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "uv run pytest"
+  }
+}

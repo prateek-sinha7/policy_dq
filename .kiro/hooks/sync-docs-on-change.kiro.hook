@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "name": "Sync Docs on Source Change",
+  "description": "When any Python source file, YAML rule, or config file changes, ask the agent to update the README or docs folder to reflect the changes.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.py",
+      "**/*.yaml",
+      "**/*.yml",
+      "pyproject.toml",
+      "pytest.ini"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A source file was just edited. Review the change and update the README.md (or any files in a /docs folder if it exists) to reflect any relevant changes — new features, updated CLI usage, changed rule configuration, or modified validator behavior. Only update docs if the change is user-facing or affects how the tool is used or configured."
+  }
+}

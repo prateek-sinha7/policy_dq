@@ -1,2 +1,3 @@
 [console_scripts]
 policy-dq = policy_dq.cli:cli
+policy-dq-api = uvicorn:main

@@ -5,20 +5,23 @@ from policy_dq.models import ValidationError
 
 logger = logging.getLogger(__name__)
 
+_PHONE_RE = re.compile(
+    r"^\+?1?\s*[-.]?\s*\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4}$"
+)
 
-def validate_regex(data, rule):
+
+def validate_phone(data: list[dict], rule: dict) -> list[ValidationError]:
     errors = []
-    pattern = re.compile(rule["pattern"])
     field = rule["field"]
 
     for i, row in enumerate(data):
         value = row.get(field)
-        if value and not pattern.match(value):
-            logger.debug("Row %d: field '%s' value '%s' failed regex", i, field, value)
+        if value and not _PHONE_RE.match(str(value)):
+            logger.debug("Row %d: invalid phone '%s' in field '%s'", i, value, field)
             errors.append(ValidationError(
                 rule_name=rule["name"],
                 field=field,
-                message="regex failed",
+                message="invalid phone number",
                 row=i,
             ))
 

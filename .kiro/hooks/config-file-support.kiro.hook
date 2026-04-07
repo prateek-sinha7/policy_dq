@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "name": "Config File Support",
+  "description": "Reminds the agent to update config file support whenever pyproject.toml or any config file is modified.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "pyproject.toml",
+      "*.yaml",
+      "*.yml",
+      "*.toml",
+      "*.json"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A config file was just edited. Ensure the project properly supports configuration via config files. Check that: (1) pyproject.toml or a dedicated config file can supply default values for CLI options, (2) config loading logic lives in the business logic layer (not the CLI), (3) config values are typed and validated using the existing models, and (4) any new config keys are documented. Do not duplicate config handling between the CLI and core logic."
+  }
+}

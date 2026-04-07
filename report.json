@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "rule_name": "email_required",
+    "field": "email",
+    "message": "field is required",
+    "row": 1
+  },
+  {
+    "rule_name": "email_format",
+    "field": "email",
+    "message": "regex failed",
+    "row": 2
+  },
+  {
+    "rule_name": "age_range",
+    "field": "age",
+    "message": "value out of range",
+    "row": 1
+  },
+  {
+    "rule_name": "unique_customer",
+    "field": "customer_id",
+    "message": "duplicate value",
+    "row": 1
+  },
+  {
+    "rule_name": "unique_customer",
+    "field": "customer_id",
+    "message": "duplicate value",
+    "row": 2
+  },
+  {
+    "rule_name": "valid_dates",
+    "field": "start_date,end_date",
+    "message": "invalid cross-field rule",
+    "row": 0
+  },
+  {
+    "rule_name": "valid_dates",
+    "field": "start_date,end_date",
+    "message": "invalid cross-field rule",
+    "row": 1
+  },
+  {
+    "rule_name": "valid_dates",
+    "field": "start_date,end_date",
+    "message": "invalid cross-field rule",
+    "row": 2
+  }
+]

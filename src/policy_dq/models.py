@@ -1,12 +1,10 @@
 from dataclasses import dataclass
-from typing import Optional
 
 
-@dataclass
+@dataclass(slots=True)
 class ValidationError:
-
     rule_name: str
-    field: Optional[str]
+    field: str | None
     message: str
-    row: Optional[int]
+    row: int | None
     severity: str = "error"

@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Add Logging Support",
+  "description": "Reminds the agent to add proper logging to newly created Python source files using the standard logging module.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "src/**/*.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new Python file was just created. Ensure it includes proper logging support using Python's standard `logging` module. Add a module-level logger with `logger = logging.getLogger(__name__)` and use appropriate log levels (DEBUG, INFO, WARNING, ERROR) at key points in the code such as function entry/exit, validation results, errors, and important state changes. Do not use print statements for diagnostic output."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "Code Quality Review",
+  "description": "Analyzes modified source files for code smells, design patterns, and best practices, generating suggestions for readability, maintainability, and performance improvements",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/**/*.py",
+      "tests/**/*.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Analyze the recently modified source file for potential improvements. Look for: code smells, opportunities to apply design patterns, adherence to best practices (Python 3.11, type hints, mypy strict, ruff linting), readability and maintainability issues, and performance optimizations. Focus on the existing functionality and suggest improvements without changing behavior. Keep suggestions concise and actionable."
+  }
+}

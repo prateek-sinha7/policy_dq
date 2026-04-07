@@ -1,5 +1,7 @@
+README.md
 pyproject.toml
 src/policy_dq/__init__.py
+src/policy_dq/api.py
 src/policy_dq/cli.py
 src/policy_dq/models.py
 src/policy_dq.egg-info/PKG-INFO
@@ -9,7 +11,6 @@ src/policy_dq.egg-info/entry_points.txt
 src/policy_dq.egg-info/requires.txt
 src/policy_dq.egg-info/top_level.txt
 src/policy_dq/mcp/__init__.py
-src/policy_dq/mcp/client.py
 src/policy_dq/parsers/__init__.py
 src/policy_dq/parsers/csv_parser.py
 src/policy_dq/parsers/json_parser.py
@@ -21,7 +22,9 @@ src/policy_dq/rules/__init__.py
 src/policy_dq/rules/loader.py
 src/policy_dq/validators/__init__.py
 src/policy_dq/validators/cross_field.py
+src/policy_dq/validators/email.py
 src/policy_dq/validators/engine.py
+src/policy_dq/validators/phone.py
 src/policy_dq/validators/range.py
 src/policy_dq/validators/regex.py
 src/policy_dq/validators/required.py
